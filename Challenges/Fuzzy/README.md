@@ -8,7 +8,7 @@ gobuster : Gobuster is a tool used to brute-force URIs (directories and files) i
 
  - First used 'gobuster' in Kali to find names of hidden directories within the website
  
- ![](Challenges/Fuzzy/gbhome.png)
+ ![](/Fuzzy/gbhome.png)
  
  
  
