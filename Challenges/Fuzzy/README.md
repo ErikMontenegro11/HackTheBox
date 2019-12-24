@@ -59,10 +59,12 @@ wfuzz --hh=24 -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackt
  - Since we now know that failed response pages are 27 characters in length and return code 200, I Re-ran the command with the --hh=27 to hide failed responses.  Also tried the "--filter" option to do the same thing.<br/>
 
  - **Command:**<br/>
-wfuzz --hh=27 -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ<br/>
+wfuzz --hh=27 -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ
 <br/>
 OR<br/>
-wfuzz --filter "c=200 and w!=5" -c -w /usr/share/dirb/wordlists/big.txt http://<i</i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ<br/>
+<br/>
+wfuzz --filter "c=200 and w!=5" -c -w /usr/share/dirb/wordlists/big.txt http://<i</i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ
+<br/>
 
 ![](fuzresults.png)
  
