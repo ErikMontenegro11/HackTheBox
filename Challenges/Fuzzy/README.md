@@ -9,7 +9,7 @@ Burp Suite CE
 ## Walkthrough
  - First, visited the website homepage to see if anything stood out right away.  The webpage clearly states that it is working on adding additional functionality.  
 
-Pic
+![](home.png)
 
  - Used 'gobuster' in Kali to try and enumerate names of hidden directories within the website. <br/> 
   Command: 'gobuster dir -u http://<i></i>hackthebox.eu:30829/ -w /usr/share/wordlists/common.txt' <br/>  
