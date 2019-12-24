@@ -13,10 +13,10 @@ Burp Suite CE
 
  - Used 'gobuster' in Kali to try and enumerate names of hidden directories within the website. <br/> 
  - **Command:**<br/>
- 'gobuster dir -u http://<i></i>hackthebox.eu:30829/ -w /usr/share/wordlists/common.txt' <br/>  
- dir | Directory mode <br/> 
- -u | url <br/> 
- -w | path to desired word list for brute forcing <br/> 
+'gobuster dir -u http://<i></i>hackthebox.eu:30829/ -w /usr/share/wordlists/common.txt' <br/>  
+dir | Directory mode <br/> 
+-u | url <br/> 
+-w | path to desired word list for brute forcing <br/> 
  
  ![](gbhome.png)
  
@@ -28,7 +28,7 @@ Burp Suite CE
    
  ![](gbapi.png)
  
-  - After entering action.php into the url we are given the following error:
+  - The scan reports that the api directory contains a file named "action.php". After entering action.php into the url, we are given the following error:
   
   ![](actionurl.png)
  
@@ -59,10 +59,10 @@ wfuzz --hh=24 -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackt
  - Since we now know that failed response pages are 27 characters in length and return code 200, I Re-ran the command with the --hh=27 to hide failed responses.  Also tried the "--filter" option to do the same thing.<br/>
 
  - **Command:**<br/>
- wfuzz --hh=27 -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ <br/>
+wfuzz --hh=27 -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ<br/>
 <br/>
-OR <br/>
- wfuzz --filter "c=200 and w!=5" -c -w /usr/share/dirb/wordlists/big.txt http://<i></i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ <br/>
+OR<br/>
+wfuzz --filter "c=200 and w!=5" -c -w /usr/share/dirb/wordlists/big.txt http://<i</i>docker.hackthebox.eu:30964/api/action.php?reset=FUZZ<br/>
 
 ![](fuzresults.png)
  
