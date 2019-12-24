@@ -8,9 +8,9 @@ gobuster : Gobuster is a tool used to brute-force URIs (directories and files) i
 
  - Used 'gobuster' in Kali to try and enumerate names of hidden directories within the website. <br/> 
   Useage: 'gobuster dir -u http://<i></i>.hackthebox.eu:30829/ -w /usr/share/wordlists/common.txt' <br/>  
- dir (Directory mode) <br/> 
-  u url <br/> 
-  w path to desired word list for brute forcing <br/> 
+ -dir (Directory mode) <br/> 
+  -u url <br/> 
+  -w path to desired word list for brute forcing <br/> 
  
  ![](gbhome.png)
  
