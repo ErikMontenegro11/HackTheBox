@@ -18,6 +18,9 @@ gobuster : Gobuster is a tool used to brute-force URIs (directories and files) i
    
    Command: gobuster dir -u http://docker.hackthebox.eu:30964/api/ -w /usr/share/wordlists/common.txt -t 50 -x php,txt,html,htm <br/>
    *Note: -t 50 (50 threads increases speed) | -x adds file types to search for
+   
+ ![](gbapi.png)
+ 
 
 
 
