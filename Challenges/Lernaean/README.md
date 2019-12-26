@@ -11,7 +11,7 @@ Your target is not very good with computers. Try and guess their password to see
 ## Failed Response:
 ![](response.png)
 
- - After some time trying to gather what clues I could, I got stuck.  I re-read the login page and it says "Don't try and guess my password."  To me, this meant that it was something not easily guessed and was a suggestion to use a tool.  Examining the failed response more closely, I noticed that the very first title after the "Invalid password!" text was, "Login - Lernaean."  Since I had no clue what Lernaean meant, I decided to search the word.  Lo and behold, my search returned information about Lernaean Hydra, a serpentine water monster in Greek mythology.  Huge clue to use Hydra password cracker in Kali.<br/>
+ - After some time trying to gather what clues I could, I re-read the login page and it says "Don't try and guess my password."  To me, this meant that it was something not easily guessed and was a suggestion to use a tool.  Examining the failed response more closely, I noticed that the very first title after the "Invalid password!" text was, "Login - Lernaean."  Since I had no clue what Lernaean meant, I decided to search the word.  Lo and behold, my search returned information about Lernaean Hydra, a serpentine water monster in Greek mythology.  Huge clue to use Hydra password cracker in Kali.<br/>
 
 
 
@@ -20,8 +20,8 @@ hydra -s 32636 -l Administrator -P /usr/share/wordlists/rockyou.txt docker.hackt
  * -s (Port number of webpage)
  * -l (Known username)
  * -P (Specifies which world list to use)
- * -module (http-post-form used to pass values to "password=")
- * "/:" path
+ *  http-post-form (Module used to pass values to "password=")
+ * "/:" path specification in the URL
  * "password=^PASS^:" parameter definition
  * "Failed Response"
  * -f (Tells hydra to stop when valid password is found)
@@ -32,6 +32,10 @@ hydra -s 32636 -l Administrator -P /usr/share/wordlists/rockyou.txt docker.hackt
 - After entering "Leonardo" into the password field, we are met with the following:
 
 ![](oops.png)
+
+- Examined the failed response in Burp which revealed that the flag was hidden in the response:
+
+![](nope.png)
 
 
  
