@@ -5,7 +5,7 @@ Your target is not very good with computers. Try and guess their password to see
 
  - First looked at the website to see if there was anything that immediately stood out.  Inspected the page source using "Inspect Element" in the browser.  Noticed the form for submitting passwords into the page.  Tried a random password and captured the request and the response using Burp Suite.  
  
- ### Request:
+### Request:
 ![](request.png)
 
 ### Failed Response:
@@ -17,14 +17,14 @@ Your target is not very good with computers. Try and guess their password to see
 
 **Command:**<br/>
 hydra -s 32636 -l Administrator -P /usr/share/wordlists/rockyou.txt docker.hackthebox.eu http-post-form "/:password=^PASS^:Invalid password!" -f <br/>
- * -s <port number of webpage>
- * -l <Known username>
- * -P <Specifies which world list to use>
- * -module <http-post-form used to pass values to "password=">
+ * -s (Port number of webpage)
+ * -l (Known username)
+ * -P (Specifies which world list to use)
+ * -module (http-post-form used to pass values to "password=")
  * "/:" path
  * "password=^PASS^:" parameter definition
  * "Failed Response"
- * -f <tells hydra to stop when valid password is found>
+ * -f (Tells hydra to stop when valid password is found)
   
 ![](pwfound.png)
  
